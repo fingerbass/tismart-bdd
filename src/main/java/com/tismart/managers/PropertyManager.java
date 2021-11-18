@@ -1,7 +1,6 @@
 package com.tismart.managers;
 
 import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.Properties;
@@ -16,7 +15,8 @@ public class PropertyManager {
         if (props.isEmpty()) {
             try {
                 inputStream = new FileInputStream(propsFilename);
-            } catch (FileNotFoundException e) {
+                props.load(inputStream);
+            } catch (IOException e) {
                 e.printStackTrace();
             } finally {
                 if (inputStream != null) {

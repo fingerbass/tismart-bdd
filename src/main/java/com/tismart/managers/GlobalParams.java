@@ -31,8 +31,8 @@ public class GlobalParams {
         Properties props = new PropertyManager().getProp();
 
         GlobalParams params = new GlobalParams();
-        params.setNavigatorDriver(props.getProperty("webTestURL"));
-        params.setWebTestURL(props.getProperty("navigatorDriver"));
+        params.setNavigatorDriver(props.getProperty("navigatorDriver"));
+        params.setWebTestURL(props.getProperty("webTestURL"));
     }
 
 
