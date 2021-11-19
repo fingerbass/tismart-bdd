@@ -1,6 +1,8 @@
 package com.tismart.utils;
 
 import com.tismart.managers.DriverManager;
+import org.omg.CORBA.PUBLIC_MEMBER;
+import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
@@ -35,5 +37,16 @@ public class WebDriverDOM {
     public void click(WebElement e) {
         waitVisibility(e);
         e.click();
+    }
+
+    public void clear(WebElement e) {
+        waitVisibility(e);
+        e.clear();
+    }
+
+    public void sendKeys(WebElement e, String texto){
+        waitVisibility(e);
+        e.clear();
+        e.sendKeys(texto);
     }
 }
