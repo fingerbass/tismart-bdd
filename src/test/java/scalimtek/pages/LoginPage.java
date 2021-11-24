@@ -30,7 +30,7 @@ public class LoginPage extends WebDriverDOM {
     }
 
     public String getTextoMsgLoginIncorrecto(){
-        waitVisibility(msgLoginIncorrecto);
+        waitForVisibility(msgLoginIncorrecto);
         return msgLoginIncorrecto.getText();
     }
 }
