@@ -19,7 +19,7 @@ import org.junit.runner.RunWith;
         , glue = {"automationpractice/stepdefs"}
         , snippets = CucumberOptions.SnippetType.CAMELCASE
         , monochrome = false
-        // , tags = ""
+        , tags = "@current"
 )
 public class runnerCompras {
 }

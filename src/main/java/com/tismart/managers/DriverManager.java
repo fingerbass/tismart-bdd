@@ -1,5 +1,6 @@
 package com.tismart.managers;
 
+import com.tismart.utils.TestUtils;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -16,7 +17,7 @@ import org.openqa.selenium.safari.SafariOptions;
  */
 public class DriverManager {
     private static ThreadLocal<WebDriver> driver;
-
+    static TestUtils utils;
     public WebDriver getDriver(){
         return driver.get();
     }
@@ -27,6 +28,7 @@ public class DriverManager {
 
     public void initDriver(){
         driver = new ThreadLocal<>();
+        utils = new TestUtils();
 
         WebDriver driverlocal = null;
         GlobalParams params = new GlobalParams();
@@ -44,7 +46,7 @@ public class DriverManager {
 
 
         try {
-
+            utils.log().info("Inicializando WebDriver");
             switch (params.getNavigatorDriver()){
                 case "Chrome":
                     WebDriverManager.chromedriver().setup();
